@@ -6,7 +6,7 @@ Amplify.configure({
   Auth: {
       userPoolId: 'us-east-1_RRkXdEPfh',
       userPoolWebClientId: '7sea7r0emjtmjughhir7mbas61',
-      authenticationFlowType: 'USER_PASSWORD_AUTH'
+      // authenticationFlowType: 'USER_PASSWORD_AUTH'
   }
 });
 
@@ -50,4 +50,9 @@ class App extends Component {
   }
 }
 
-export default withAuthenticator(App);
+export default withAuthenticator(App, {
+  includeGreetings: true,
+  federated: {
+    google_client_id: '807330092930-lrvggss4545a0l2ebsif9r5fm06138as.apps.googleusercontent.com',
+  }
+});
